@@ -1,4 +1,31 @@
-.product-img:hover > .ract{
+.product-img:hover>.ract {
     top: 80%;
     transition: all 0.4s;
+}
+
+.translate:hover>.option {
+    top: 30px;
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+/* Define scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Define scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #7FAD39;
+    border-radius: 5px;
+}
+
+/* Optional: define scrollbar track when hovered */
+::-webkit-scrollbar-track:hover {
+    background: #cbd5e0;
+}
+
+.active-login-page {
+    right: 4%;
+    transition: all 0.5s;
 }

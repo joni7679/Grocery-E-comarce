@@ -9,17 +9,37 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                        primarycolor: "rgb(239 233 233)"
-                    },
-                    boxShadow: {
-                        'custom': 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
-                    },
+
+                screens: {
+                    'sm': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
                 }
+            },
+            extend: {
+
+
+                colors: {
+                    clifford: '#da373d',
+                    primarycolor: "rgb(239 233 233)"
+                },
+                boxShadow: {
+                    'custom': 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
+                },
             }
         }
+
     </script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
@@ -29,415 +49,933 @@
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/images/logo.png">
 </head>
 </head>
 
-<body class="overflow-x-hidden">
+<body>
+    <div class="main w-full overflow-x-hidden">
+        <header class=" w-full   py-5 px-10 capitalize shadow-custom ">
+            <div class="top-part flex items-center justify-between">
+                <div class="logo">
+                    <img class="w-[50px]" src="./assets/images/logo.png" alt="">
+                    <h1>my store</h1>
+                </div>
+                <div class="w-[40%] mx-auto  relative">
+                    <input type="text" class="w-full border rounded-md px-4 py-2 focus:outline-none"
+                        placeholder="Enter text here...">
+                    <i class="ri-search-line absolute right-3 top-2 cursor-pointer"></i>
+                </div>
 
-    <header class=" w-full  flex items-center justify-between p-5 capitalize shadow-custom">
-        <div class="logo">
-            <img class="w-[50px]" src="./assets/images/logo.png" alt="">
-            <h1>my store</h1>
-        </div>
-        <div class="w-[40%] mx-auto  relative">
-            <input type="text" class="w-full border rounded-md px-4 py-2 focus:outline-none"
-                placeholder="Enter text here...">
-            <i class="ri-search-line absolute right-3 top-2 cursor-pointer"></i>
-        </div>
+                <div class="right-part flex items-center gap-3">
+                    <div class="social p-[15px] flex items-center justify-center gap-3">
+                        <i class="ri-facebook-line p-[7px] cursor-pointer"></i>
+                        <i class="ri-instagram-line p-[7px] cursor-pointer"></i>
+                        <i class="ri-twitter-x-line p-[7px] cursor-pointer"></i>
+                    </div>
+                    <div class="translate flex items-center cursor-pointer gap-1 relative ">
+                        <img src="./assets/images/language.png" alt="">
+                        <p>English</p><i class="ri-arrow-drop-down-line"></i>
+                        <div
+                            class="absolute option top-[96px] bg-[#7FAD39] p-[10px] px-[25px]  h-32 rounded-2xl text-white z-[4] opacity-0 hover:duration-0">
+                            <h1>Bengla</h1>
+                            <h1>English</h1>
+                            <h1>hindi</h1>
+                        </div>
 
-        <div class="right-part flex items-center gap-3 w-[25%]">
-            <div class="social p-[15px] flex items-center justify-center gap-3">
-                <i class="ri-facebook-line p-[7px] cursor-pointer"></i>
-                <i class="ri-instagram-line p-[7px] cursor-pointer"></i>
-                <i class="ri-twitter-x-line p-[7px] cursor-pointer"></i>
+                    </div>
+                    <div class="login flex items-center cursor-pointer">
+                        <i class="ri-user-line"></i>
+                        <p>login</p>
+
+                    </div>
+                </div>
             </div>
-            <div class="translate flex items-center gap-2 ">
-                <img src="./assets/images/language.png" alt="">
-                <p>English</p><i class="ri-arrow-drop-down-line"></i>
+            <div class="bottom-part text-center relative">
+                <nav>
+                    <a class="mx-[25px] hover:text-[green]" href="#">home</a>
+                    <a class="mx-[25px] hover:text-[green]" href="#">shop</a>
+                    <a class="mx-[25px] hover:text-[green]" href="#">Productse</a>
+                    <a class="mx-[25px] hover:text-[green]" href="#"> Blog</a>
+                    <a class="mx-[25px] hover:text-[green]" href="#">conact</a>
+                </nav>
+                <div
+                    class="bg-white p-8 rounded-lg shadow-lg w-96 absolute top-[17%] right-[7%] login-page z-[99] overflow-hidden">
+                    <div id="loginForm" class="animate__animated animate__fadeInLeft">
+                        <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label for="loginEmail"
+                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
+                                <input type="email" id="loginEmail" name="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="loginPassword"
+                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Password</label>
+                                <input type="password" id="loginPassword" name="password"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="flex justify-center">
+                                <button type="submit"
+                                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Login</button>
+                            </div>
+                        </form>
+                        <p class="mt-4 text-center">Don't have an account? <button id="showSignupForm"
+                                class="text-blue-500">Sign Up</button></p>
+                    </div>
+                    <div id="signupForm" class="hidden  animate__animated animate__flipInX">
+                        <h2 class="text-2xl font-bold mb-4 text-center">Sign Up</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label for="signupName"
+                                    class="block  text-left mb-[10px]text-sm font-semibold text-gray-600">Name</label>
+                                <input type="text" id="signupName" name="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="signupEmail"
+                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
+                                <input type="email" id="signupEmail" name="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="signupPhone"
+                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Phone
+                                    Number</label>
+                                <input type="tel" id="signupPhone" name="phone"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="signupPassword text-left mb-[10px]"
+                                    class="block text-sm font-semibold text-gray-600">Password</label>
+                                <input type="password" id="signupPassword" name="password"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="flex justify-center">
+                                <button type="submit"
+                                    class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Sign
+                                    Up</button>
+                            </div>
+                        </form>
+                        <p class="mt-4 text-center">Already have an account? <button id="showLoginForm"
+                                class="text-blue-500">Login</button></p>
+                    </div>
+                </div>
             </div>
-            <div class="login flex items-center ">
-                <i class="ri-user-line"></i>
-                <p>login</p>
+        </header>
+        <div class="banner-section w-full h-screen flex items-center justify-between px-10 mt-[40px]">
+            <div class="left-silder w-[20%] bg-[#fff]" data-aos="fade-right">
+                <div
+                    class="heading flex items-center justify-center gap-5 py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white cursor-pointer ">
+                    <div>
+                        <i class="ri-menu-line"></i>
+                    </div>
+                    <h1 class="text-lg">All Categories</h1>
+                    <div>
+                        <i class="ri-arrow-drop-down-line"></i>
+                    </div>
+                </div>
+
+                <div class="categories w-full border px-4 pt-3 h-[80vh] overflow-x-auto">
+                    <ul>
+                        <li class="p-2"><a href="#">Fresh Meat</a></li>
+                        <li class="p-2"><a href="#">Vegetables</a></li>
+                        <li class="p-2"><a href="#">Fruit &amp; Nut Gifts</a></li>
+                        <li class="p-2"><a href="#">Fresh Berries</a></li>
+                        <li class="p-2"><a href="#">Ocean Foods</a></li>
+                        <li class="p-2"><a href="#">Butter &amp; Eggs</a></li>
+                        <li class="p-2"><a href="#">Fastfood</a></li>
+                        <li class="p-2"><a href="#">Fresh Onion</a></li>
+                        <li class="p-2"><a href="#">Papayaya &amp; Crisps</a></li>
+                        <li class="p-2"><a href="#">Oatmeal</a></li>
+                        <li class="p-2"><a href="#">Fresh Bananas</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="banner-img w-[70%] h-full   bg-cover bg-center p-4 relative bg-[url('./assets/images/banner.jpg')] overflow-hidden"
+                data-aos="fade-left">
+                <div class="banner-title absolute top-1/3 left-[10%]">
+                    <p class="text-lime-500">FRUIT FRESH</p>
+                    <h1 class="text-3xl font-bold mt-1 ">
+                        Vegetable <br>
+                        100% Organic </h1>
+                    <p class="mt-2">
+                        Free Pickup and Delivery Available
+                    </p>
+                    <button class="py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white">SHOP
+                        NOW</button>
+                </div>
 
             </div>
         </div>
-    </header>
 
-    <div class="banner-section w-full h-screen flex items-center justify-between px-10 mt-[40px]">
-        <div class="left-silder w-[20%] bg-[#fff]" data-aos="fade-right">
+        <div class="categories-section p-10">
+
+            <div class="categories-silder">
+
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-1.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-2.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-3.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-4.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-5.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-1.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <div
+                        class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
+                        <div
+                            class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
+                            <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-3.png" alt="">
+                        </div>
+                        <h1
+                            class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            fresh fruit</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-section p-10">
+            <h1 class="text-center p-6 text-4xl">Featured Product</h1>
+            <div class="text-center flex items-center justify-center gap-4 p-5">
+                <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">
+                    All
+                </p>
+                <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">Oranges</p>
+                <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">Fresh Meat</p>
+                <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]"> Vegetables Fastfood</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-4">
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-1.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-2.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-3.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-4.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-5.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-6.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-7.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+                <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
+                        <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-8.jpg"
+                            alt="Product Image">
+                        <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
+                            <i
+                                class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                            <i
+                                class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
+                    <p class="text-gray-700 mt-2 text-center">$10.00</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="banner p-10">
             <div
-                class="heading flex items-center justify-center gap-5 py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white cursor-pointer ">
-                <div>
-                    <i class="ri-menu-line"></i>
-                </div>
-                <h1 class="text-lg">All Categories</h1>
-                <div>
-                    <i class="ri-arrow-drop-down-line"></i>
-                </div>
-            </div>
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-4 m-auto w-full">
 
-            <div class="categories w-full border px-4 pt-3 h-[80vh] overflow-x-auto">
-                <ul>
-                    <li class="p-2"><a href="#">Fresh Meat</a></li>
-                    <li class="p-2"><a href="#">Vegetables</a></li>
-                    <li class="p-2"><a href="#">Fruit &amp; Nut Gifts</a></li>
-                    <li class="p-2"><a href="#">Fresh Berries</a></li>
-                    <li class="p-2"><a href="#">Ocean Foods</a></li>
-                    <li class="p-2"><a href="#">Butter &amp; Eggs</a></li>
-                    <li class="p-2"><a href="#">Fastfood</a></li>
-                    <li class="p-2"><a href="#">Fresh Onion</a></li>
-                    <li class="p-2"><a href="#">Papayaya &amp; Crisps</a></li>
-                    <li class="p-2"><a href="#">Oatmeal</a></li>
-                    <li class="p-2"><a href="#">Fresh Bananas</a></li>
-                </ul>
+                <div class="max-w-[550px] h-64 bg-red-900" data-aos="zoom-in">
+                    <img class="w-full h-full object-cover" src="./assets/images/banner/banner-1.jpg" alt="">
+                </div>
+                <div class="max-w-[550px] h-64 bg-red-900" data-aos="zoom-in">
+                    <img class="w-full h-full object-cover" src="./assets/images/banner/banner-2.jpg" alt="">
+                </div>
+
+
             </div>
 
         </div>
-        <div class="banner-img w-[70%] h-full   bg-cover bg-center p-4 relative bg-[url('./assets/images/banner.jpg')] overflow-hidden"
-            data-aos="fade-left">
-            <div class="banner-title absolute top-1/3 left-[10%]">
-                <p class="text-lime-500">FRUIT FRESH</p>
-                <h1 class="text-3xl font-bold mt-1 ">
-                    Vegetable <br>
-                    100% Organic </h1>
-                <p class="mt-2">
-                    Free Pickup and Delivery Available
-                </p>
-                <button class="py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white">SHOP
-                    NOW</button>
-            </div>
+        <div class="product-section p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1   gap-3">
+            <div class="max-w-xs">
+                <div class="flex items-center justify-between">
+                    <h1 class="p-3 text-2xl">Latest Products</h1>
+                    <i class="ri-arrow-left-s-line p-[8px]  bg-gray-300 rounded cursor-pointer text-xl"></i>
+                    <i class="ri-arrow-right-s-line p-[8px] bg-gray-300 rounded cursor-pointer text-xl"></i>
 
+                </div>
+                <div class="prdocut-silder">
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-1.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-2.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-4.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-5.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-6.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-7.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-8.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-10.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-11.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-12.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-xs">
+                <div class="flex items-center justify-between">
+                    <h1 class="p-3 text-2xl">Top Rated Products
+                    </h1>
+                    <i class="ri-arrow-left-s-line p-[8px]  bg-gray-300 rounded cursor-pointer text-xl"></i>
+                    <i class="ri-arrow-right-s-line p-[8px] bg-gray-300 rounded cursor-pointer text-xl"></i>
+
+                </div>
+                <div class="prdocut-silder">
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-1.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-2.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-4.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-5.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-6.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-7.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-8.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-10.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-11.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-12.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-xs">
+                <div class="flex items-center justify-between">
+                    <h1 class="p-3 text-2xl">Review Products
+                    </h1>
+                    <i class="ri-arrow-left-s-line p-[8px]  bg-gray-300 rounded cursor-pointer text-xl"></i>
+                    <i class="ri-arrow-right-s-line p-[8px] bg-gray-300 rounded cursor-pointer text-xl"></i>
+
+                </div>
+                <div class="prdocut-silder">
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-1.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-2.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-4.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-5.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-6.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-7.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-8.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-9.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-items">
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-10.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-11.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list w-60 mt-[20px]">
+                            <div class="flex items-center gap-3 w-full">
+                                <img class="w-28" src="./assets/images/product/product-12.jpg" alt="">
+                                <div class="flex items-center justify-center flex-col w-full">
+                                    <h5 class="text-sm"> Crab Pool Security </h5>
+                                    <span class="font-bold">$30.00</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="blog-section p-10">
+            <h1 class="text-center text-3xl">From The Blog</h1>
+        </div>
+
+        <footer class="footer bg-[#F3F6FA] text-black py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img class="w-32" src="./assets/images/logo.png" alt=""></a>
+                        </div>
+                        <ul class="mt-4 text-gray-950">
+                            <li>Address: Kadihat , Belbari, Gangarampur</li>
+                            <li>Phone: +919546644618</li>
+                            <li>Email: mystor098@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="footer__widget">
+                        <h6 class="text-gray-900 font-bold">Useful Links</h6>
+                        <ul class="mt-4">
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">About Us</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">About Our Shop</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Secure Shopping</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Delivery information</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Our Sitemap</a></li>
+                        </ul>
+                        <h6 class="mt-4 text-gray-900">Follow Us</h6>
+                        <ul class="mt-4">
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Facebook</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Twitter</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">LinkedIn</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Instagram</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Reddit</a></li>
+                            <li><a href="#" class="text-gray-950hover:text-emerald-600">Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__widget">
+                        <h6 class="text-gray-900 font-bold">Join Our Newsletter Now</h6>
+                        <p class="mt-4 text-gray-950">Subscribe Now</p>
+                        <form class="mt-4">
+                            <input type="text" placeholder="Enter your mail"
+                                class="px-4 py-2 w-full rounded border border-gray-400">
+                            <button type="submit"
+                                class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Subscribe</button>
+                        </form>
+                        <div class="flex items-center gap-3 mt-4">
+                            <a href="#"
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
+                                    class="ri-facebook-circle-fill"></i></a>
+                            <a href="#"
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
+                                    class="ri-instagram-line"></i></a>
+                            <a href="#"
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
+                                    class="ri-twitter-x-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8 text-gray-950">
+                    <p class="mb-4">&copy;
+
+                        made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank" class="hover:text-white">Joni Halder</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <div class="categories-section p-10">
-
-        <div class="categories-silder">
-
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-1.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-2.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-3.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-4.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-5.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-1.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-
-            <div class="p-6">
-                <div
-                    class="categories-box max-w-[250px] p-5 flex items-center justify-center flex-col rounded border border-gray-300 transition duration-300 ease-in-out hover:border-gray-600 relative">
-                    <div
-                        class="img-box overflow-hidden w-52 h-48 transition duration-300 ease-in-out transform hover:scale-100">
-                        <img class="cursor-pointer w-full h-full" src="./assets/images/categories/cat-3.png" alt="">
-                    </div>
-                    <h1
-                        class="capitalize p-3 mt-4 rounded-full shadow-custom bg-white border border-gray-300 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        fresh fruit</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-section p-10">
-        <h1 class="text-center p-6 text-4xl">Featured Product</h1>
-        <div class="text-center flex items-center justify-center gap-4 p-5">
-            <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">
-                All
-            </p>
-            <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">Oranges</p>
-            <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">Fresh Meat</p>
-            <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]"> Vegetables Fastfood</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-4">
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-1.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-2.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-3.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-4.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-5.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-6.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-7.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-            <div class="p-4  product-box rounded " data-aos="fade-up" data-aos-duration="3000">
-                <div class="product-img h-[14rem] overflow-hidden relative  cursor-pointer">
-                    <img class="w-full h-full  object-cover mb-2" src="./assets/images/featured/feature-8.jpg"
-                        alt="Product Image">
-                    <div class="ract absolute top-[110%] left-[30%] hover:transition duration-300 ease-in-out  ">
-                        <i
-                            class="ri-heart-line bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shopping-cart-line bg-white  p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                        <i
-                            class="ri-shining-2-line p-2 rounded-full cursor-pointer bg-white p-2 rounded-full cursor-pointer hover:bg-[#7fad39]hover:text-emerald-600 hover:rotate-36  transition duration-300 ease-in-out"></i>
-                    </div>
-                </div>
-                <p class="text-gray-500 text-center mt-2 font-bold">Fresh Meet</p>
-                <p class="text-gray-700 mt-2 text-center">$10.00</p>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="banner p-10">
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-4 m-auto w-full">
-
-            <div class="max-w-[550px] h-64 bg-red-900" data-aos="zoom-in">
-                <img class="w-full h-full object-cover" src="./assets/images/banner/banner-1.jpg" alt="">
-            </div>
-            <div class="max-w-[550px] h-64 bg-red-900" data-aos="zoom-in">
-                <img class="w-full h-full object-cover" src="./assets/images/banner/banner-2.jpg" alt="">
-            </div>
-
-
-        </div>
-
-    </div>
-    <footer class="footer bg-[#F3F6FA] text-black py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="footer__about">
-                    <div class="footer__about__logo">
-                        <a href="./index.html"><img class="w-32" src="img/logo.png" alt=""></a>
-                    </div>
-                    <ul class="mt-4 text-gray-950">
-                        <li>Address: Kadihat , Belbari, Gangarampur</li>
-                        <li>Phone: +919546644618</li>
-                        <li>Email: mystor098@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="footer__widget">
-                    <h6 class="text-gray-900 font-bold">Useful Links</h6>
-                    <ul class="mt-4">
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">About Us</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">About Our Shop</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Secure Shopping</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Delivery information</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Our Sitemap</a></li>
-                    </ul>
-                    <h6 class="mt-4 text-gray-900">Follow Us</h6>
-                    <ul class="mt-4">
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Facebook</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Twitter</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">LinkedIn</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Instagram</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Reddit</a></li>
-                        <li><a href="#" class="text-gray-950hover:text-emerald-600">Pinterest</a></li>
-                    </ul>
-                </div>
-                <div class="footer__widget">
-                    <h6 class="text-gray-900 font-bold">Join Our Newsletter Now</h6>
-                    <p class="mt-4 text-gray-950">Subscribe Now</p>
-                    <form class="mt-4">
-                        <input type="text" placeholder="Enter your mail"
-                            class="px-4 py-2 w-full rounded border border-gray-400">
-                        <button type="submit"
-                            class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Subscribe</button>
-                    </form>
-                    <div class="footer__widget__social mt-4">
-                        <a href="#" class="text-gray-950hover:text-emerald-600"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-950hover:text-emerald-600"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-950hover:text-emerald-600"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-950hover:text-emerald-600"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-8 text-gray-950">
-                <p class="mb-4">&copy;
-
-                    made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank" class="hover:text-white">Joni Halder</a>
-
-                    <img src="./assets/images/payment-item.png" alt="">
-
-                </p>
-            </div>
-        </div>
-    </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
