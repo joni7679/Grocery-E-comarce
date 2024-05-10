@@ -58,19 +58,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // let loginpage = document.querySelector(".login-page");
-// let user = document.querySelector(".login")
+// let user = document.getElementById("user");
 
 // user.addEventListener("click", () => {
-//   loginpage.classList.add(".active-login-page")
-// })
+//   let a = 0;
+//   if (a === 0) {
+//     loginpage.style.right = "4%";
+//     loginpage.style.transition = "0.4s"; // Corrected typo: "transition" instead of "transtion"
+//     a = 1;
+//   }
+//   else {
+//     loginpage.style.right = "-100%";
+//     loginpage.style.transition = "0.4s"; // Corrected typo: "transition" instead of "transtion"
+//     a = 0;
+//   }
+// });
 
+let loginpage = document.querySelector(".login-page");
+let user = document.getElementById("user");
+
+user.addEventListener("click", () => {
+  loginpage.classList.toggle("active-login-page");
+});
 
 
 $('.prdocut-silder').slick({
   dots: false,
   infinite: true,
   speed: 300,
-  autoplay:true,
+  autoplay: true,
   // autoplay:0,
   slidesToShow: 1,
   adaptiveHeight: true
