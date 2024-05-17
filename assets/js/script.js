@@ -14,7 +14,7 @@ $('.categories-silder').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
+        dots: false
       }
     },
     {
@@ -35,6 +35,8 @@ $('.categories-silder').slick({
     // settings: "unslick"
     // instead of a settings object
   ]
+
+
 });
 
 
@@ -57,29 +59,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// let loginpage = document.querySelector(".login-page");
-// let user = document.getElementById("user");
-
-// user.addEventListener("click", () => {
-//   let a = 0;
-//   if (a === 0) {
-//     loginpage.style.right = "4%";
-//     loginpage.style.transition = "0.4s"; // Corrected typo: "transition" instead of "transtion"
-//     a = 1;
-//   }
-//   else {
-//     loginpage.style.right = "-100%";
-//     loginpage.style.transition = "0.4s"; // Corrected typo: "transition" instead of "transtion"
-//     a = 0;
-//   }
-// });
-
 let loginpage = document.querySelector(".login-page");
 let user = document.getElementById("user");
 
 user.addEventListener("click", () => {
   loginpage.classList.toggle("active-login-page");
 });
+
+let hambugericon = document.getElementById("hambuger-icon");
+let navbar = document.querySelector("nav");
+hambugericon.addEventListener("click", () => {
+  navbar.classList.toggle("active-nav")
+})
+
+
 
 
 $('.prdocut-silder').slick({
@@ -91,3 +84,12 @@ $('.prdocut-silder').slick({
   slidesToShow: 1,
   adaptiveHeight: true
 });
+
+$(".prev-btn").click(function () {
+  $(".prdocut-silder").slick("slickPrev");
+});
+
+$(".next-btn").click(function () {
+  $(".prdocut-silder").slick("slickNext");
+});
+
