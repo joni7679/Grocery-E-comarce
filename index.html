@@ -57,112 +57,114 @@
 
 <body>
     <div class="main w-full overflow-hidden">
-        <header class="container mx-auto w-full   py-5 px-10 capitalize  shadow-lg">
-            <div class="top-part flex items-center justify-between">
-                <div class="logo">
-                    <img class="w-[50px]" src="./assets/images/logo.png" alt="">
-                    <h1>my store</h1>
-                </div>
-                <div class="w-[40%] mx-auto  relative">
-                    <input type="text" class="w-full border rounded-md px-4 py-2 focus:outline-none"
-                        placeholder="Enter text here...">
-                    <i class="ri-search-line absolute right-3 top-2 cursor-pointer"></i>
-                </div>
-
-                <div class="right-part flex items-center gap-3">
-                    <div class="social p-[15px] flex items-center justify-center gap-3">
-                        <i class="ri-facebook-line p-[7px] cursor-pointer"></i>
-                        <i class="ri-instagram-line p-[7px] cursor-pointer"></i>
-                        <i class="ri-twitter-x-line p-[7px] cursor-pointer"></i>
+        <header class=" w-full   py-5 px-10 capitalize  shadow-lg">
+            <div class="container mx-auto">
+                <div class="top-part flex items-center justify-between">
+                    <div class="logo">
+                        <img class="w-[50px]" src="./assets/images/logo.png" alt="">
+                        <h1>my store</h1>
                     </div>
-                    <div class="translate flex items-center cursor-pointer gap-1 relative ">
-                        <img src="./assets/images/language.png" alt="">
-                        <p>English</p><i class="ri-arrow-drop-down-line"></i>
-                        <div
-                            class="absolute option top-[96px] bg-[#7FAD39] p-[10px] px-[25px]  h-32 rounded-2xl text-white z-[4] opacity-0 hover:duration-0">
-                            <h1>Bengla</h1>
-                            <h1>English</h1>
-                            <h1>hindi</h1>
+                    <div class="w-[40%] mx-auto  relative">
+                        <input type="text" class="w-full border rounded-md px-4 py-2 focus:outline-none"
+                            placeholder="Enter text here...">
+                        <i class="ri-search-line absolute right-3 top-2 cursor-pointer"></i>
+                    </div>
+
+                    <div class="right-part flex items-center gap-3">
+                        <div class="social p-[15px] flex items-center justify-center gap-3">
+                            <i class="ri-facebook-line p-[7px] cursor-pointer"></i>
+                            <i class="ri-instagram-line p-[7px] cursor-pointer"></i>
+                            <i class="ri-twitter-x-line p-[7px] cursor-pointer"></i>
                         </div>
+                        <div class="translate flex items-center cursor-pointer gap-1 relative ">
+                            <img src="./assets/images/language.png" alt="">
+                            <p>English</p><i class="ri-arrow-drop-down-line"></i>
+                            <div
+                                class="absolute option top-[96px] bg-[#7FAD39] p-[10px] px-[25px]  h-32 rounded-2xl text-white z-[4] opacity-0 hover:duration-0">
+                                <h1>Bengla</h1>
+                                <h1>English</h1>
+                                <h1>hindi</h1>
+                            </div>
 
-                    </div>
-                    <div class="flex items-center cursor-pointer" id="user">
-                        <i class="ri-user-line"></i>
-                        <p>login</p>
+                        </div>
+                        <div class="flex items-center cursor-pointer" id="user">
+                            <i class="ri-user-line"></i>
+                            <p>login</p>
 
+                        </div>
+                        <i class="ri-menu-3-fill cursor-pointer" id="hambuger-icon"></i>
                     </div>
-                    <i class="ri-menu-3-fill cursor-pointer" id="hambuger-icon"></i>
                 </div>
-            </div>
-            <div class="bottom-part text-center relative">
-                <nav class="w-[80%]">
-                    <a class="mx-[25px] hover:text-[green]" href="#">home</a>
-                    <a class="mx-[25px] hover:text-[green]" href="#">shop</a>
-                    <a class="mx-[25px] hover:text-[green]" href="#">Productse</a>
-                    <a class="mx-[25px] hover:text-[green]" href="#"> Blog</a>
-                    <a class="mx-[25px] hover:text-[green]" href="#">conact</a>
-                </nav>
-                <div
-                    class="bg-white p-8 rounded-lg shadow-lg w-96 absolute top-[17%]  login-page z-[99] overflow-hidden">
-                    <div id="loginForm" class="animate__animated animate__fadeInLeft">
-                        <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
-                        <form>
-                            <div class="mb-4">
-                                <label for="loginEmail"
-                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
-                                <input type="email" id="loginEmail" name="email"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-6">
-                                <label for="loginPassword"
-                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Password</label>
-                                <input type="password" id="loginPassword" name="password"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="flex justify-center">
-                                <button type="submit"
-                                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Login</button>
-                            </div>
-                        </form>
-                        <p class="mt-4 text-center">Don't have an account? <button id="showSignupForm"
-                                class="text-blue-500">Sign Up</button></p>
-                    </div>
-                    <div id="signupForm" class="hidden  animate__animated animate__flipInX">
-                        <h2 class="text-2xl font-bold mb-4 text-center">Sign Up</h2>
-                        <form>
-                            <div class="mb-4">
-                                <label for="signupName"
-                                    class="block  text-left mb-[10px]text-sm font-semibold text-gray-600">Name</label>
-                                <input type="text" id="signupName" name="name"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="signupEmail"
-                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
-                                <input type="email" id="signupEmail" name="email"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="signupPhone"
-                                    class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Phone
-                                    Number</label>
-                                <input type="tel" id="signupPhone" name="phone"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-6">
-                                <label for="signupPassword text-left mb-[10px]"
-                                    class="block text-sm font-semibold text-gray-600">Password</label>
-                                <input type="password" id="signupPassword" name="password"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="flex justify-center">
-                                <button type="submit"
-                                    class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Sign
-                                    Up</button>
-                            </div>
-                        </form>
-                        <p class="mt-4 text-center">Already have an account? <button id="showLoginForm"
-                                class="text-blue-500">Login</button></p>
+                <div class="bottom-part text-center relative">
+                    <nav class="w-[80%]">
+                        <a class="mx-[25px] hover:text-[green]" href="#">home</a>
+                        <a class="mx-[25px] hover:text-[green]" href="#">shop</a>
+                        <a class="mx-[25px] hover:text-[green]" href="#">Productse</a>
+                        <a class="mx-[25px] hover:text-[green]" href="#"> Blog</a>
+                        <a class="mx-[25px] hover:text-[green]" href="#">conact</a>
+                    </nav>
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg w-96 absolute top-[17%]  login-page z-[99] overflow-hidden">
+                        <div id="loginForm" class="animate__animated animate__fadeInLeft">
+                            <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="loginEmail"
+                                        class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
+                                    <input type="email" id="loginEmail" name="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="loginPassword"
+                                        class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Password</label>
+                                    <input type="password" id="loginPassword" name="password"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="flex justify-center">
+                                    <button type="submit"
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Login</button>
+                                </div>
+                            </form>
+                            <p class="mt-4 text-center">Don't have an account? <button id="showSignupForm"
+                                    class="text-blue-500">Sign Up</button></p>
+                        </div>
+                        <div id="signupForm" class="hidden  animate__animated animate__flipInX">
+                            <h2 class="text-2xl font-bold mb-4 text-center">Sign Up</h2>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="signupName"
+                                        class="block  text-left mb-[10px]text-sm font-semibold text-gray-600">Name</label>
+                                    <input type="text" id="signupName" name="name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="signupEmail"
+                                        class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Email</label>
+                                    <input type="email" id="signupEmail" name="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="signupPhone"
+                                        class="block text-left mb-[10px] text-sm font-semibold text-gray-600">Phone
+                                        Number</label>
+                                    <input type="tel" id="signupPhone" name="phone"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="signupPassword text-left mb-[10px]"
+                                        class="block text-sm font-semibold text-gray-600">Password</label>
+                                    <input type="password" id="signupPassword" name="password"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="flex justify-center">
+                                    <button type="submit"
+                                        class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Sign
+                                        Up</button>
+                                </div>
+                            </form>
+                            <p class="mt-4 text-center">Already have an account? <button id="showLoginForm"
+                                    class="text-blue-500">Login</button></p>
+                        </div>
                     </div>
                 </div>
             </div>
