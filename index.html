@@ -57,7 +57,7 @@
 
 <body>
     <div class="main w-full overflow-hidden">
-        <header class=" w-full   py-5 px-10 capitalize shadow-custom">
+        <header class="container mx-auto w-full   py-5 px-10 capitalize  shadow-lg">
             <div class="top-part flex items-center justify-between">
                 <div class="logo">
                     <img class="w-[50px]" src="./assets/images/logo.png" alt="">
@@ -89,7 +89,7 @@
                     <div class="flex items-center cursor-pointer" id="user">
                         <i class="ri-user-line"></i>
                         <p>login</p>
-                       
+
                     </div>
                     <i class="ri-menu-3-fill cursor-pointer" id="hambuger-icon"></i>
                 </div>
@@ -167,54 +167,49 @@
                 </div>
             </div>
         </header>
-        <div class="banner-section w-full h-screen flex items-center justify-between px-10 mt-[40px]">
-            <div class="left-silder w-[20%] bg-[#fff]" data-aos="fade-right">
-                <div
-                    class="heading flex items-center justify-center gap-5 py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white cursor-pointer ">
-                    <div>
-                        <i class="ri-menu-line"></i>
-                    </div>
-                    <h1 class="text-lg">All Categories</h1>
-                    <div>
-                        <i class="ri-arrow-drop-down-line"></i>
-                    </div>
-                </div>
+        <!-- Container -->
+        <div class=" m-10 container mx-auto  flex  gap-5 flex-col md:flex-row">
 
-                <div class="categories w-full border px-4 pt-3 h-[80vh] overflow-x-auto">
-                    <ul>
-                        <li class="p-2"><a href="#">Fresh Meat</a></li>
-                        <li class="p-2"><a href="#">Vegetables</a></li>
-                        <li class="p-2"><a href="#">Fruit &amp; Nut Gifts</a></li>
-                        <li class="p-2"><a href="#">Fresh Berries</a></li>
-                        <li class="p-2"><a href="#">Ocean Foods</a></li>
-                        <li class="p-2"><a href="#">Butter &amp; Eggs</a></li>
-                        <li class="p-2"><a href="#">Fastfood</a></li>
-                        <li class="p-2"><a href="#">Fresh Onion</a></li>
-                        <li class="p-2"><a href="#">Papayaya &amp; Crisps</a></li>
-                        <li class="p-2"><a href="#">Oatmeal</a></li>
-                        <li class="p-2"><a href="#">Fresh Bananas</a></li>
-                    </ul>
-                </div>
+            <!-- Sidebar -->
+            <div class=" text-gray w-full md:w-1/4 p-4 border-solid border-2 ">
 
+                <div class="font-bold text-lg mb-4 bg-[#7FAD39] text-white p-5 flex items-center justify-between">
+                    <h1>All Categories</h1>
+                    <i class="ri-menu-2-fill"></i>
+
+                </div>
+                <ul>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fresh Meat</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Vegetables</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fruit & Nut Gifts</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fresh Berries</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Ocean Foods</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Butter & Eggs</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fastfood</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fresh Onion</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Papaya & Crisps</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Oatmeal</a></li>
+                    <li class="py-2"><a href="#" class="hover:text-gray-300">Fresh Bananas</a></li>
+                </ul>
             </div>
-            <div class="banner-img w-[70%] h-full   bg-cover bg-center p-4 relative bg-[url('./assets/images/banner.jpg')] overflow-hidden"
-                data-aos="fade-left">
-                <div class="banner-title absolute top-1/3 left-[10%]">
-                    <p class="text-lime-500">FRUIT FRESH</p>
-                    <h1 class="text-3xl font-bold mt-1 ">
-                        Vegetable <br>
-                        100% Organic </h1>
-                    <p class="mt-2">
-                        Free Pickup and Delivery Available
-                    </p>
-                    <button class="py-[10px] px-[25px] bg-[#7fad39] rounded cursor-pointer mt-3 text-white">SHOP
-                        NOW</button>
-                </div>
 
+            <!-- Main Content -->
+            <div class="w-full md:w-3/4 p-8 banner-bg relative">
+                <div class="text-center absolute top-1/2 left-1/2 transform -translate-x-[90%] -translate-y-1/2">
+                    <h2 class="text-green-600 font-bold text-lg mb-2">FRUIT FRESH</h2>
+                    <h1 class="text-4xl font-bold mb-4">Vegetable 100% Organic</h1>
+                    <p class="text-gray-600 mb-4">Free Pickup and Delivery Available</p>
+                    <a href="#" class="bg-[#7FAD39] text-white py-2 px-4 rounded">SHOP NOW</a>
+                    <div class="mt-8">
+
+                    </div>
+                </div>
             </div>
+
         </div>
 
-        <div class="categories-section p-10">
+
+        <div class=" container mx-auto categories-section p-10">
 
             <div class="categories-silder">
 
@@ -309,7 +304,7 @@
             </div>
         </div>
 
-        <div class="product-section p-10">
+        <div class=" container mx-auto product-section p-10">
             <h1 class="text-center p-6 text-4xl">Featured Product</h1>
             <div class="text-center flex items-center justify-center gap-4 p-5">
                 <p class="cursor-pointer hover:border-b-[1px]  border-green-700 p-[7px]">
@@ -462,7 +457,7 @@
         </div>
 
 
-        <div class="banner p-10">
+        <div class="banner p-10 container mx-auto">
             <div
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-4 m-auto w-full">
 
@@ -474,7 +469,7 @@
                 </div>
             </div>
         </div>
-        <div class="product-section p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1   gap-3">
+        <div class=" container mx-auto product-section p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1   gap-3">
             <div class="max-w-xs">
                 <div class="flex items-center justify-between">
                     <h1 class="p-3 text-2xl font-bold">Latest Products</h1>
@@ -916,6 +911,73 @@
 
         <div class="blog-section p-10">
             <h1 class="text-center text-3xl font-bold">From The Blog</h1>
+
+            <div class="container mx-auto mt-5">
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden " data-aos="fade-right"
+                        data-aos-offset="300" data-aos-easing="ease-in-sine">
+                        <img class="w-full h-48 object-cover" src="./assets/images/blog/blog-4.jpg" alt="Vegetables">
+                        <div class="p-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M12 12a5 5 0 1 1-8-4m6 4v2a2 2 0 1 1-4 0v-2m6 4H5a2 2 0 0 1-2-2v-2a2 2 0 1 1 4 0v2h6a2 2 0 0 1 0 4z" />
+                                </svg>
+                                <span>By User</span>
+                                <span class="ml-2">1st May 2023</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mt-2">Fresh And <span
+                                    class="text-green-600">Organic</span> Vegetables And Fruits</h2>
+                            <p class="text-gray-600 mt-2">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed
+                                Do Eiusmod</p>
+                            <button class="mt-4 px-4 py-2 bg-[#7FAD39] text-white rounded hover:bg-green-500">Read More
+                                ..</button>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in-up">
+                        <img class="w-full h-48 object-cover" src="./assets/images/blog/blog-5.jpg" alt="Vegetables">
+                        <div class="p-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M12 12a5 5 0 1 1-8-4m6 4v2a2 2 0 1 1-4 0v-2m6 4H5a2 2 0 0 1-2-2v-2a2 2 0 1 1 4 0v2h6a2 2 0 0 1 0 4z" />
+                                </svg>
+                                <span>By User</span>
+                                <span class="ml-2">1st May 2023</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mt-2">Fresh And <span
+                                    class="text-green-600">Organic</span> Vegetables And Fruits</h2>
+                            <p class="text-gray-600 mt-2">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed
+                                Do Eiusmod</p>
+                            <button class="mt-4 px-4 py-2 bg-[#7FAD39] text-white rounded hover:bg-green-500">Read More
+                                ..</button>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-left"
+                        data-aos-offset="300" data-aos-easing="ease-in-sine">
+                        <img class="w-full h-48 object-cover" src="./assets/images/blog/blog-6.jpg" alt="Vegetables">
+                        <div class="p-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M12 12a5 5 0 1 1-8-4m6 4v2a2 2 0 1 1-4 0v-2m6 4H5a2 2 0 0 1-2-2v-2a2 2 0 1 1 4 0v2h6a2 2 0 0 1 0 4z" />
+                                </svg>
+                                <span>By User</span>
+                                <span class="ml-2">1st May 2023</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mt-2">Fresh And <span
+                                    class="text-green-600">Organic</span> Vegetables And Fruits</h2>
+                            <p class="text-gray-600 mt-2">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed
+                                Do Eiusmod</p>
+                            <button class="mt-4 px-4 py-2 bg-[#7FAD39] text-white rounded hover:bg-green-500">Read More
+                                ..</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer class="footer bg-[#F3F6FA] text-black py-8 " data-aos="fade-up" data-aos-duration="1000">
@@ -960,17 +1022,17 @@
                             <input type="text" placeholder="Enter your mail"
                                 class="px-4 py-2 w-full rounded border border-gray-400">
                             <button type="submit"
-                                class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Subscribe</button>
+                                class="mt-2 px-4 py-2 bg-[#7FAD39] text-white rounded ">Subscribe</button>
                         </form>
                         <div class="flex items-center gap-3 mt-4">
                             <a href="#"
-                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
-                                    class="ri-facebook-circle-fill"></i></a>
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white hover:bg-[#7FAD39] hover:text-white duration-1000"><i
+                                    class="ri-facebook-circle-fill "></i></a>
                             <a href="#"
-                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white  hover:bg-[#7FAD39] hover:text-white duration-1000"><i
                                     class="ri-instagram-line"></i></a>
                             <a href="#"
-                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white"><i
+                                class="flex items-center justify-center h-10 w-10 text-base text-gray-700 border border-gray-300 rounded-full leading-none text-center bg-white hover:bg-[#7FAD39] hover:text-white duration-1000"><i
                                     class="ri-twitter-x-line"></i></a>
                         </div>
                     </div>

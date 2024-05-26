@@ -40,12 +40,12 @@
     display: none;
 }
 
-/* @media (max-width:800px) {
-    .banner-section {
-        flex-direction: column;
-    }
+.banner-bg{
+    background: url('../images/hero/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
-} */
 .active-nav {
     right: -5%;
     transition: all 0.5s;
